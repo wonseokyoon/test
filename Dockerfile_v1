@@ -1,3 +1,4 @@
+# SingleStage
 FROM gradle:jdk-21-and-23-graal-jammy
 
 # 작업 디렉토리 설정
@@ -24,11 +25,6 @@ RUN rm -rf /app/build/libs/*-plain.jar
 
 # 빌드된 JAR 파일 복사
 RUN mv /app/build/libs/*.jar app.jar
-
-# 최종 도커 이미지에 담길 필요없는 것들 삭제
-RUN rm -rf /app/build
-RUN rm -rf /app/src
-RUN rm -rf /app/*.kts
 
 # 실행할 JAR 파일 지정
 ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=prod", "app.jar"]
