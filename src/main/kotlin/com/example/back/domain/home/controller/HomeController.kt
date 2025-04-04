@@ -12,7 +12,7 @@ class HomeController {
 
     @GetMapping("")
     fun home(): String{
-      return "Hello World! _ V7: " + secretValue
+      return "Hello World! _ V8: " + secretValue
     }
 
 }
