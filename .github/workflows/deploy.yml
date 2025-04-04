@@ -40,7 +40,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: application-secret 추가
         env:
-          NO_HTML: ${{secrets.SECRET}}
+          NO_HTML: ${{secrets.APPLICATIONSECRET}}
         run: echo "$NO_HTML" > src/main/resources/application-secret.yml
       - name: Docker Buildx 설치
         uses: docker/setup-buildx-action@v2
